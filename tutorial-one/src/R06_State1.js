@@ -60,7 +60,6 @@ const State예제1 = () => {
         if(test === 'A') setTest('B')
         else setTest('A');
     }
-       
        /* 
        if(test === 'A') {
             setTest('B')
@@ -68,8 +67,6 @@ const State예제1 = () => {
             setTest('A');
         }
             */
-
-    
 
     return (
         // return 안에는 !Doctype 부터 html과 head body와 같은 태그를 사용 X
