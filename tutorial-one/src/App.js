@@ -20,6 +20,7 @@ import R02 from "./R02_FunctionComponent.js";
 import Props1 from "./R03_Prop.js";
 import Props2 from "./R04_Props2.js";
 import Props3 from "./R05_Props3.js";
+import 예제1번 from "./R06_State1.js"; //'' "" 크게 상관 없음
 function App() {
   return (
     /* 
@@ -43,12 +44,11 @@ function App() {
       <div className="info">
         이름 : 강감찬 / 나이 : 72 / 성별 : 남자
       </div>
-      */}
+      
       <Props3 num='5' name="김연정" age='40' gender='여자' phone='010-1111-2222'/>
+*/}
 
-
-
-
+        <예제1번 />
 
     </div>
   );
