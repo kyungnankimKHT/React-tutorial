@@ -25,10 +25,13 @@ import 예제2번 from "./component/R07_State2.js";
 import 예제3번 from "./component/R08_State3.js";
 import 예제4번 from "./component/R09_State4.js";
 import 예제5번 from "./component/R10_State5.js";
-import 컨텍스트1 from './component/R12_Context1.js';
-import 컨텍스트2 from './component/R13_Context2.js';
-import 컨텍스트3 from './component/R15_Context3/Parent.js';
-import 부트스트랩1 from './component/R14_Bootstrap.js';
+import 컨텍스트1 from "./component/R12_Context1.js";
+import 컨텍스트2 from "./component/R13_Context2.js";
+import 컨텍스트3 from "./component/R15_Context3/Parent.js";
+
+import 멤버가입 from "./component/R16_Context4/최종출력공간.js";
+
+import 부트스트랩1 from "./component/R14_Bootstrap.js";
 function App() {
   return (
     /* 
@@ -39,7 +42,7 @@ function App() {
     <div className="App-header">
       {/*<R01/>*/}
       {/*<R02/>*/}
-      
+
       {/*
      <Props1 num="1" name="홍길동" age="20" score="90" />
       <Props1 num="2" name="홍길은" age="30" score="80" />
@@ -65,11 +68,11 @@ function App() {
 
       {/*<예제5번 />*/}
       {/*<컨텍스트1/>*/}
-     {/* <부트스트랩1 />*/}
-     {/*<컨텍스트2 />*/}
-     <컨텍스트3/>
+      {/* <부트스트랩1 />*/}
+      {/*<컨텍스트2 />*/}
+      {/*<컨텍스트3/>*/}
+      <멤버가입 />
     </div>
-
   );
 }
 
