@@ -37,17 +37,22 @@ import 'bootstrap/dist/css/bootstrap.css';
 index.js에 import를 작성해줌
 
 부트스트랩 뿐만 아니라 전체적으로 사용할 css는 index.js나 App.js에 작성
+
+npm = 상대적으로 설치 속도 느림
+yarn = npm과 똑같은 패키지 관리자 npm 보다 좀 더 빠름
+
 */
 
 import React from "react";
 
 const 부트스트랩예제1 = () => {
     return(
-        <div className="container">
-            <div className="row">
-                <div className="col-md-auto">
+        <div className="container"> {/* 반응형 레이아웃 컨테이너 만들기 */}
+            <div className="row">{/* row = 가로 = 행 생성 */}
+                <div className="col-md-auto"> {/* 중간 화면 크기에서 열(세로)의 너비를 자동으로 설정 */}
                     <h1>React와 Bootstrap 사용 시작!</h1>
                     <button className="btn btn-primary">부트스트랩 버튼</button>
+                    {/* btn = 버튼  btn-primary 파란색 버튼 css  */}
                 </div>
 
             </div>
