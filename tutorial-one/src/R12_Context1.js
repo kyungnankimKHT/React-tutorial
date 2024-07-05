@@ -19,7 +19,26 @@ Provider
 
 /* 1. Context 객체 생성 */
 // Context를 저장하는 변수명은 무조건 *대*문*자*로 시작
-const TestContext = createContext();
+const TestContext = createContext(); 
+// TestContext.Provider value='부모가 전달한 값'
+// TestContext로 value안에 작성한 '부모가 전달한 값' 을
+// createContext 안에 저장
+// createContext 안에 저장된 '부모가 전달한 값' 이
+// Provider로 밑에 있는 const, function, class 등 모든 컴포넌트에 전달
+// Provider = 공급자, 서비스나 제품을 제공하는 사람이나 회사
+
+
+/* 자식의 후손 컴포넌트 */
+const 후손 = () => {
+    const 부모value값 = useContext(TestContext);
+
+    return(
+        <>
+            <h3>후손 자리</h3>
+            <p>{부모value값}</p>
+        </>
+    )
+}
 
 /* 3. 자식 컴포넌트 */
 const 자식 = () => {
@@ -28,6 +47,10 @@ const 자식 = () => {
         <>
             <h2>자식 공간</h2>
             <p>{부모value값}</p>
+
+            <p>-------------------------------------</p>
+
+            <후손/>
         </>
     )
 }
@@ -36,6 +59,7 @@ const 자식 = () => {
 const 부모 = () => {
     return (
         /* Context 객체를 이용해서 하위 컴포넌트에 value 값을 전달 */
+    // TestContext에 value='부모가 전달한 값'를 저장하고 Provider(제공할 것)
         <TestContext.Provider value='부모가 전달한 값'>
             <자식/>
         </TestContext.Provider>
