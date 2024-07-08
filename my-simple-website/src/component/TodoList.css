@@ -4,14 +4,14 @@
     padding: 20px;
 }
 
-input {
+.todo-input {
   margin-right: 8px;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-button {
+.todo-button{
   padding: 5px 10px;
   border: none;
   background-color: #28a745;
@@ -20,16 +20,16 @@ button {
   border-radius: 4px;
 }
 
-button:hover {
+.todo-button:hover {
   background-color: #218838;
 }
 
-ul {
+.todo-ul {
   list-style-type: none;
   padding: 0;
 }
 
-li {
+.todo-li {
   margin: 10px 0;
   padding: 10px;
   background-color: #f9f9f9;

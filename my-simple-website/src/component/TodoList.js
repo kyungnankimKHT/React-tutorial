@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+//todoList css import
+import './TodoList.css';
 function TodoList() {
     const [todos, setTodos] = useState([]); //빈 배열로 설정
     const [input, setInput] = useState('');
@@ -19,16 +20,16 @@ function TodoList() {
       <div className="TodoList">
         <h1>Todo List</h1>
         <div>
-          <input 
+          <input className="todo-input"
             value={input} 
             onChange={ (e) => setInput(e.target.value)  } 
             placeholder="새로운 할 일을  추가하세요."
           />
-          <button onClick={addTodo} >할 일 추가하기</button>
+          <button className="todo-button" onClick={addTodo} >할 일 추가하기</button>
         </div>
-        <ul>
+        <ul className="todo-ul" >
           {todos.map((todo, index) => (
-            <li 
+            <li className="todo-li" 
               key={index} 
               style={{ 
                 textDecoration: todo.completed ? 'line-through' : 'none', 
