@@ -1,9 +1,11 @@
+import { useState } from "react";
+
 function TodoList() {
-    const [todos, setTodos] = useState(); //빈 배열로 설정
+    const [todos, setTodos] = useState([]); //빈 배열로 설정
     const [input, setInput] = useState('');
   
     const addTodo = () => {
-        setTodos([, { text: input, completed: false }]); //기존에 작성된 할 일 복제 후 추가
+        setTodos([[...todos], { text: input, completed: false }]); //기존에 작성된 할 일 복제 후 추가
         setInput('');
     };
   
@@ -25,7 +27,7 @@ function TodoList() {
           <button onClick={addTodo} >할 일 추가하기</button>
         </div>
         <ul>
-          {  todos.map  ((todo, index  ) => (
+          {todos.map((todo, index) => (
             <li 
               key={index} 
               style={{ 
@@ -34,7 +36,7 @@ function TodoList() {
               }}
               onClick={() => toggleTodo(index)}
             >
-              {      todo.text        }
+              {todo.text}
             </li>
           ))}
         </ul>
