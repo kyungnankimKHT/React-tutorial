@@ -1,36 +1,53 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './TicTaptoe.css';
 const 배열랜덤섞기 = (배열) => {
-  //sort = 가지런히 정렬하다 할 때 정렬   랜덤으로 나온 값을 정렬
-  // Math.random() - 0.5 : 배열을 랜덤으로 섞을 때 자주 사용 -0.5 ~ 0.5 사이 생성
-  // -0.5 를 붙이지 않으면 Math.random() 는 0.0 ~ 0.99999999999999999999999999... 사이 값 반환
-  //  0.5 범위 지정용
   return 배열.sort(() => Math.random() - 0.5);
 };
 
+/*    TicTapToeTwoStep 컴포넌트 시작 위치   */
 const TicTapToeTwoStep = () => {
-  // numbers 1부터 9까지 숫자가 섞인 배열
-  // ...Array(9) 숫자가 담길 그릇을 9개 만듬 숫자가 담길 그릇이 9개
-  // .keys() 숫자를 가지고옴
-  // 어떤 숫자를 가지고 오냐면  0 => 0 + 1     1 ~ 9 까지 생성
-  // 1 ~ 9 까지 생성된 수를 배열랜덤섞기를 이용해서 숫자가 담긴 그릇을 섞는 것
-  const [numbers, setNumbers] = useState(
-    배열랜덤섞기([...Array(20).keys()].map((n) => n + 1))
-  );
+  const [numbers, setNumbers] = useState(배열랜덤섞기([...Array(20).keys()].map((n) => n + 1)));
+  const [nextNumber, setNextNumber] = useState(1);
+  const [message, setMessage] = useState("");
 
-  // 사용자가 클릭해야하는 다음 숫자를 나타냄
-  const [nextNumber, setNextNumber] = useState(1); // 사용자가 클릭해야하는 처음 수가 1이기 때문
+//시간을 10초 로 변경
 
-  // 게임 상태에 따라 사용한테 보여줄 메세지를 표현
-  const [message, setMessage] = useState(""); //처음에는 할 말이 없기 때문에 빈공간
+  const [timer, setTimer] = useState(10); //처음 초기 시간 설정
 
+  //useEffect( function 기능명  () => {어떤 기능이 동작해야하나요?  }, [어떤값이변경될때마다 function기능이 움직여야하나요?]);
+  //useEffect(                  () => {},   []  );
+  //useEffect(                   ()=> {},   [numbers]); //numbers 숫자가 변경될 때마다 function기능 발생
+/*
+useEffect(() => {
+  // 소비자가 검색하고 싶은 검색어가 들어올 때마다 일치하는 내용들 검색하기
+  // 검색이 실시간으로 됨
+  // 끝말잇기로시작하는 단어를 보여주자
+},[끝말잇기]);
+*/
+
+useEffect(() => {
+  console.log("TicTapToeTwoStep.js 가 실행되면 ");
+  console.log(" 사용자 눈에 보이지 않게 자동 시작기능을 설정할 수 있음 ");
+  console.log("F12 에서 자동으로 콘솔로그가 찍히는지 확인하자");
+},[]);
+
+  useEffect(() => {
+    let countdown; // count = 숫자 down = 내림 숫자가 점점 내려간다는 영어
+    if( timer > 0 ){ // 남은 시간이 0보다 크다면 숫자를 점점 줄이겠다
+      // 점점 시간이 줄어드는 효과를 만들어서 적용
+      countdown = setTimeout(() => {
+        setTimer(timer - 1) ;
+      }, 1000);
+
+    } else if (timer === 0 ) { //남은 시간이 없다면
+      alert("시간초과 ! 게임이 종료되었습니다.");
+    }
+  })
   const 숫자클릭하기 = (number) => {
-    //만약에 현재 사용자가 클릭해야하는 숫자와 사용자가 클릭한 숫자가 서로 일치하는가 ?
     if (number === nextNumber) {
       if (number === 20) {
         setMessage("축하합니다. 모든 숫자를 순서대로 클릭했습니다.");
-        // 숫자를 21로 변경
       } else {
         setNextNumber(nextNumber + 1);
       }
@@ -38,18 +55,16 @@ const TicTapToeTwoStep = () => {
       setMessage("틀렸습니다. 처음부터 다시하세요.");
     }
   };
-
-
   const 재시작버튼 = () => {
-    setNumbers(배열랜덤섞기([...Array(20).keys()].map((n) => n + 1))); //다시 초기 숫자 세팅
-    // 다음숫자 세팅 
+    setNumbers(배열랜덤섞기([...Array(20).keys()].map((n) => n + 1))); //다시 초기 숫자 세팅 
     setNextNumber(1);
-    // 메세지 세팅
     setMessage('');
+    setTimer(10); //재시작 버튼에도 timer를 5초로 재설정
   };
   return (
     <div className="tictaptoe-container">
       <h1>틱탭토 2단계</h1>
+      <div className="timer">남은시간 : {timer}초</div>
       <div className="tictaptoe-two-grid">
         {numbers.map((number) => (
           <button className="tictaptoe-button"
@@ -60,11 +75,9 @@ const TicTapToeTwoStep = () => {
         ))}
       </div>
       <p>{message}</p>
-      {/*예를들어 수를 모두 맞추면 처음으로 이동하기 */}
       <button className="restart-button"  onClick={재시작버튼}>게임 재시작</button>
       <Link to="/tictaptoe"><button > 처음으로로 이동</button></Link>
     </div>
   );
 };
-
 export default TicTapToeTwoStep;
