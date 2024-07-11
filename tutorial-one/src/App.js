@@ -34,6 +34,7 @@ import 멤버가입 from "./component/R16_Context4/최종출력공간.js";
 import 부트스트랩1 from "./component/R14_Bootstrap.js";
 import Ref예제1번 from "./component/R19_useRef.js";
 import Ref예제2번 from "./component/R20_useRefInput.js";
+import Ref예제3번 from "./component/R21_useRefSignUp.js";
 function App() {
   return (
     /* 
@@ -75,7 +76,7 @@ function App() {
       {/*<컨텍스트3/>*/}
       {/*<멤버가입 />*/}
       {/*<Ref예제1번 />*/}
-      <Ref예제2번 />
+      <Ref예제3번 />
     </div>
   );
 }
