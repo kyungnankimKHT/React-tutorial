@@ -7,6 +7,9 @@ const 타이핑문제 = [
     '도토리는 맛있다.',     //1단계 문제는 0번 문제
     '도토리는 정말 맛있다.' //2단계 문제는 1번 문제
 ];
+// 문제를 5개 만들고  5개 문제가 무사히 돌아가는지 확인 문제는 임의로 작성
+
+
 
 // 클라이언트가 입력한 값이 일치하는지 확인후 Result.js 적힌 결과를 보여주는 게임
 const 타자대회 = () => {
@@ -17,12 +20,12 @@ const 타자대회 = () => {
 
 
     const 현재텍스트 = 타이핑문제[현재문제번호]; //타이핑문제에는 각각 순서숫자가 들어있는데 0부터 시작
-
+    // 타이핑문제 -> 현재텍스트 변경해서 각각의 타이핑문제를 비교할 예정
 
     const 값변경하기 = (e) => {
         set텍스트입력(e.target.value);
 
-        if(e.target.value === 타이핑문제) {
+        if(e.target.value === 현재텍스트) { //타이핑문제 -> 현재텍스트
             set결과확인(true);
         }
     }
@@ -48,7 +51,7 @@ const 타자대회 = () => {
     return (
         <div className="typing-test">
             <h1>타자치기대회</h1>
-            <p>오늘의 문제 : {텍스트입력}</p>
+            <p>오늘의 문제 : {현재텍스트}</p> {/*텍스트입력 -> 현재텍스트 */}
             <div className="typing-container">
                 {/* value = 초기에 빈공간  
                     onChange = 작성한 값 변경  
@@ -68,9 +71,7 @@ const 타자대회 = () => {
             {/* Result js 파일에 inputText =  텍스트입력과  correctText = 타이핑문제 결과 전달    */}
              {/*Link 이용해서 다음문제 이동하기  몇초안에 타자작성하기 useEffect timer*/}
             {결과확인 && 
-            <Result inputText={텍스트입력} correctText={텍스트입력}  
-           
-            />}
+            <Result inputText={텍스트입력} correctText={현재텍스트} />}
             {결과확인 && <button onClick={다시시작}>다시 시작하는버튼</button>}
             {결과확인 && <button onClick={다음문제로이동}>다음 문제</button>}
         </div>
