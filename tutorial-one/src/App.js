@@ -35,6 +35,10 @@ import 부트스트랩1 from "./component/R14_Bootstrap.js";
 import Ref예제1번 from "./component/R19_useRef.js";
 import Ref예제2번 from "./component/R20_useRefInput.js";
 import Ref예제3번 from "./component/R21_useRefSignUp.js";
+
+//R22_useRefEx -> 
+//import {RefEx as Ref예제4번} from "./component/R22_useRefEx.js";
+import  {RefEx as Ref예제4번} from "./component/R22_useRefEx.js";
 function App() {
   return (
     /* 
@@ -76,7 +80,10 @@ function App() {
       {/*<컨텍스트3/>*/}
       {/*<멤버가입 />*/}
       {/*<Ref예제1번 />*/}
+     {/** <Ref예제2번 />
       <Ref예제3번 />
+       */}
+      <Ref예제4번 />
     </div>
   );
 }
