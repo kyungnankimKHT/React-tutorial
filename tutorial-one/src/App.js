@@ -43,6 +43,7 @@ import  {RefEx as Ref예제4번} from "./component/R22_useRefEx.js";
 import Axios예제1번 from './component/R25_Axios_Ex1.js';
 
 import Fetch예제1번 from './component/R28_Fetch_ex.js';
+import Fetch예제2번 from './component/R29_Fetch_Ex2.js';
 function App() {
   return (
     /* 
@@ -89,9 +90,10 @@ function App() {
       <Ref예제3번 />
       <Ref예제4번 />
       <Axios예제1번 />
+      <Fetch예제1번 />
        */}
       
-      <Fetch예제1번 />
+      <Fetch예제2번 />
     </div>
   );
 }
