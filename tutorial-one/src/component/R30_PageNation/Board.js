@@ -37,7 +37,7 @@ const Board = () => {
             <ul className='list-group mb-4'>
                 {게시글리스트.map(항목 => (
                     <li key={항목.id} className='list-group-item'>
-                        {항목.제목}
+                        {항목.title}
                     </li>
                 ))}
             </ul>

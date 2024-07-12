@@ -9,6 +9,7 @@ paginate    : 페이지 번호를 업데이트 하는 함수
 currentPage : 현재 보고 있는 페이지 번호
 
 */
+import './Pagination.css';
 const Pagination = ({itemPerPage, totalItems, paginate, currentPage  }) =>{
     const 페이지번호들 = []; // 변수명 페이지번호들 -> pageNumbers 변경
 
@@ -29,8 +30,18 @@ const Pagination = ({itemPerPage, totalItems, paginate, currentPage  }) =>{
     return (
         <nav>
             <ul className="pagination">
+                  {/* className={`page-item ${currentPage === 번호 ? 'active'  :''}`}
+                        page-item 이라는 className이 존재
+                        만약에 현재페이지와 map에서 가리키는 번호가 일치하다면
+                        className = "page-item active"
+                        현재 페이지번호와 map에서 가리키는 번호가 다르다면
+                        (현재 페이지 이외 다른 페이지 번호들)
+                        className = "page-item"
+                  
+                  */}
                 {페이지번호들.map(번호 => (
-                    <li key={번호} className={``}>
+                  
+                    <li key={번호} className={`page-item ${currentPage === 번호 ? 'active'  :''}`}>
                         {/* 
                         !# : 클릭 이벤트가 발생했을 때 페이지가 새로고침 되는 것을 막아줌
                         <a onClick={(e) =>  {e.preventDefault();  paginate(번호); } } href="/" >
