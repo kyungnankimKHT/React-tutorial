@@ -26,7 +26,7 @@ const 앨범 = () => {
     const currentPhotos = photos.slice(firstPhoto, lastPhoto);
 
     // 페이지 변경 처리
-    const paginate = (pageNumber) = setCurrentPage(pageNumber);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <>
