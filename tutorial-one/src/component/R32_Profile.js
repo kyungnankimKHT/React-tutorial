@@ -30,7 +30,7 @@ const 프로필 = () => {
         {/*  accept="image/*"  이미지 파일 jpg png gif ... 과 같은 이미지 확장자 허용*/}
         {/* input 태그 숨기고 label로 클릭해서 이미지 보여주기 */}
         <label htmlFor="imgSelect">사진 선택하기</label>
-        <input type="file" accept="image/*" onChange={이미지변경하기} />
+        <input type="file" id="imgSelect" accept="image/*" onChange={이미지변경하기} />
         {/* 만약에 선택한 이미지가 존재한다면 이미지 미리보기를 제공 */}
         {선택한이미지 &&(
             <div>
