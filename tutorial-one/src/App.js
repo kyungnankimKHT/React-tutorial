@@ -46,6 +46,7 @@ import Fetch예제1번 from './component/R28_Fetch_ex.js';
 import Fetch예제2번 from './component/R29_Fetch_Ex2.js';
 
 import Board from "./component/R30_PagiNation/Board.js";
+import Album from "./component/R31_PagiNationEx/Album.js";
 function App() {
   return (
     /* 
@@ -96,7 +97,7 @@ function App() {
       <Fetch예제2번 />
        */}
       
-      <Board />
+      <Album />
     </div>
   );
 }
