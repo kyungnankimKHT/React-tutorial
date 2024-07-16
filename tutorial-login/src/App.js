@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LoginContext from "./components/LoginContext";
 import Signup from "./components/SignUp";
 import Login from "./components/Login";
-
+import './App.css';
 /* 현재 App.js는 제일 위에 있는 컴포넌트 = 객체 */
 function App() {
   //회원 가입창 보이기 / 숨기기

@@ -40,7 +40,7 @@ const Login = () => {
             //id,pw값 모두 지우기
             setId('');
             setPw('');
-        
+            alert('로그인 성공~!');
         
         })
     }
