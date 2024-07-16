@@ -45,6 +45,10 @@ const Login = () => {
         })
     }
 
+    /*로그아웃 이벤트 핸들러 */
+    const 로그아웃버튼 = () => {
+        setLoginMember(null);
+    }
   return (
     <div className="login-container">
       <table>
@@ -70,6 +74,14 @@ const Login = () => {
           </tr>
         </tbody>
       </table>
+
+      {/* loginMember 가 null이 아닌 경우 로그아웃 버튼 보이게 하기 */}
+      {loginMember &&(
+        <button>로그아웃</button>
+
+      )}
+
+
     </div>
   );
 };
