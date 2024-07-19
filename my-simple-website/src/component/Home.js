@@ -1,5 +1,5 @@
 import React from "react";
-import '../css/Home.css';
+import "../css/Home.css";
 const Home = () => {
   return (
     <div className="home-container">
@@ -10,9 +10,9 @@ const Home = () => {
         </p>
       </header>
 
-    {/*******  소개 섹션 part1과 part2가 존재 *******/}
-      
-      {/* part 1 :  사진을 넣지 않고 소개만 작성하는 about*/}
+      {/*******  소개 섹션 part1과 part2가 존재 *******/}
+
+      {/* part 1 :  사진을 넣지 않고 소개만 작성하는 about
       <section className="home-about-one">
         <h2>소개</h2>
         <p>이름     : ㅇㅇㅇ </p>
@@ -21,24 +21,24 @@ const Home = () => {
         <p>이메일   :      </p>
         <p>깃허브주소 : <a href="https://www.github.com">https://www.github.com</a></p>
       </section>
-
+*/}
       {/* part 2 : 한 row를 두 colum으로 나눠서 좌측은 사진 우측은 소개 작성하는 about */}
       <section className="home-about-two">
+        <h2>소개</h2>
         <div className="about-row">
           <div className="about-image">
             <img src="./hancom.jpg" alt="프로필 사진" />
           </div>
           <div className="about-text">
-            <h2>소개</h2>
-            <p>이름       : ㅇㅇㅇ </p>
-            <p>나이       :        </p>
-            <p>수료과정   :        </p>
-            <p>이메일     :        </p>
-            <p>깃허브주소 : <a href="https://www.github.com">https://www.github.com</a></p>
+            <p>이름 : ㅇㅇㅇ </p>
+            <p>나이 : </p>
+            <p>수료과정 : </p>
+            <p>이메일 : </p>
+            <p>깃허브주소 :<a href="https://www.github.com">https://www.github.com</a>
+            </p>
           </div>
         </div>
       </section>
-
 
       {/****** 보유 기술 섹션 *******/}
       <section className="home-skills">
@@ -61,7 +61,6 @@ const Home = () => {
           {/** Link to 이용해서 프로젝트 이동 js 작성하기 */}
         </div>
       </section>
-
     </div>
   );
 };
