@@ -23,12 +23,18 @@ body {
     color:  #555;
 }
 
-/****** 소개 섹션 1 사진없음 ******/
-.home-about-one , .home-about-two {
+/****** 소개 섹션 1,2 보유기술, 프로젝트 공통 css 작성 ******/
+.home-about-one , 
+.home-about-two, 
+.home-skills,
+.home-projects {
     margin-bottom: 40px;
 }
 
-.home-about-one h2, .home-about-two h2 {
+.home-about-one h2, 
+.home-about-two h2, 
+.home-skills h2,
+.home-projects h2 {
     font-size: 28px;
     margin-bottom: 20px;
     color: #333;
@@ -36,6 +42,9 @@ body {
     padding-bottom: 10px;
 }
 
+
+
+/****** 소개 섹션 1 사진없음 ******/
 .home-about-one p {
     font-size: 20px;
     color: #444;
@@ -74,5 +83,41 @@ body {
 
 .home-about-two .about-text p {
     font-size: 14px;
+    color: #444;
+}
+
+/****** 보유 기술 섹션 ******/
+
+.home-skills ul {
+    /* ul 태그 옆에 붙은 .을 제거 */
+    list-style-type: none ;
+    padding: 0;
+}
+
+.home-skills ul li {
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #444;
+}
+
+.home-projects .project-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #e0dfdf;
+}
+
+
+.home-projects .project-item  h3 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.home-projects .project-item p {
+    font-size: 25px;
     color: #444;
 }
