@@ -1,4 +1,4 @@
-const User = ({ user, userList, setUserList, 수정버튼 }) => {
+const User = ({ user, userList, setUserList, setEditUser }) => {
   /*
   1번과 2번 동일
 1번 : const User = ({ user, userList, setUserList, 수정버튼 }) => {
@@ -33,7 +33,7 @@ const User = ({ user, userList, setUserList, 수정버튼 }) => {
         <button onClick={deleteUser}>삭제하기</button>
       </td>
       <td>
-        <button onClick={() => 수정버튼(user)}>수정하기</button>
+        <button onClick={() => setEditUser(user)}>수정하기</button>
       </td>
     </tr>
   );

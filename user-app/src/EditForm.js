@@ -33,7 +33,7 @@ const 값변경하기 = (e) => { //값 변경에 대한 e(이벤트)가 발생�
 // input = e button = x
 const 수정내용제출하기 = (e) => {
     e.preventDefault();
-    값변경하기();   
+    updateUser(formData);   
 }
 
 return (
@@ -71,7 +71,7 @@ return (
             onChange={값변경하기}
             />
         </label>
-        <button onClick={수정내용제출하기}>저장하기</button>
+        <button  type = "button"onClick={수정내용제출하기}>저장하기</button>
     </form>
     
     </>

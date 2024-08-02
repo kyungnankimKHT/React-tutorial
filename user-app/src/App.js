@@ -55,7 +55,7 @@ function App() {
               user={item}
               userList={userList}
               setUserList={setUserList}
-              수정버튼={setEditUser}
+              setEditUser={setEditUser}
             />
         ))}
         </tbody>
