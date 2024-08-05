@@ -17,7 +17,7 @@ const User = ({ user, userList, setUserList, setEditUser }) => {
     //1번과 2번은 동일하지만 {return } 의 존재 유무가 다름
 
     const newUserList = userList.filter((item) => {
-      return item === user; //선택한 번호만 삭제
+      return item !== user; //선택한 번호만 삭제
       //  return item === user;  내가 선택한 번호 이외 모두 삭제
     });
     setUserList(newUserList);
